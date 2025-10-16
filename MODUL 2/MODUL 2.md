@@ -103,8 +103,7 @@ int main() {
 
 ```
 penjelasan singkat 1
-Program C++ ini dirancang untuk melakukan kalkulasi matriks 3x3, mencakup penjumlahan, pengurangan, dan perkalian. Melalui antarmuka input-output yang interaktif, pengguna diminta untuk menginput dua matriks dan memilih jenis operasi. Selanjutnya, program akan memproses perhitungan setiap elemen menggunakan perulangan dan menampilkan matriks hasil secara otomatis.
-
+Program C++ ini adalah alat untuk menghitung operasi matriks 3x3. Program ini meminta Anda memasukkan elemen untuk dua matriks (A dan B). Setelah itu, Anda bisa memilih untuk melakukan penjumlahan, pengurangan, atau perkalian kedua matriks tersebut. Program akan menghitung hasilnya menggunakan fungsi khusus untuk setiap operasi, lalu menampilkan matriks hasil kepada Anda.
 ### 2. ...
 
 ```C++
@@ -146,7 +145,7 @@ int main() {
 
 ```
 penjelasan singkat 2
-Program C++ ini mengimplementasikan algoritma pergeseran siklis (cyclic shift) untuk tiga variabel sambil secara komparatif mendemonstrasikan dua paradigma passing parameter: pass-by-pointer dan pass-by-reference. Fungsi swapPointer mengeksekusi penukaran nilai dengan memanfaatkan alamat memori dan dereferensi pointer, sebuah pendekatan yang umum dalam bahasa C. Sementara itu, fungsi swapReference menggunakan mekanisme reference C++ untuk memanipulasi variabel asli secara langsung. Kedua implementasi tersebut berhasil mencapai hasil akhir yang sama, yaitu pergeseran nilai variabel.
+Program C++ ini bertujuan untuk menunjukkan dua cara berbeda yang canggih dalam memindahkan nilai tiga variabel (x, y, dan z) secara berputar, yaitu menggunakan Pointer dan Reference. Fungsi swapPointer menerima alamat memori dari variabel asli, memungkinkan perubahan nilai terjadi langsung pada variabel utama. Sementara itu, fungsi swapReference menerima variabel sebagai alias (reference), yang juga membuat perubahan nilai di dalam fungsi langsung berdampak pada variabel asli. Kedua metode ini berhasil memutar nilai, di mana nilai x dipindahkan ke z, y ke x, dan z ke y, menegaskan bahwa keduanya adalah teknik efektif untuk memodifikasi data di luar cakupan fungsi.
 
 
 ### 3. ...
@@ -235,7 +234,7 @@ int main() {
 }
 ```
 penjelasan singkat  3
-Program C++ ini dirancang sebagai alat bantu berbasis menu untuk melakukan analisis statistik sederhana pada sekumpulan data dari sepuluh angka. Fungsi-fungsi utamanya meliputi kemampuan untuk menampilkan seluruh data, menemukan nilai tertinggi dan terendah, serta menghitung rata-ratanya. Interaksinya dibuat terus-menerus, sehingga pengguna bisa memilih berbagai operasi sampai akhirnya memutuskan untuk keluar dari program.
+Program C++ ini adalah aplikasi berbasis menu yang dirancang untuk melakukan analisis statistik dasar pada satu array (larik) integer yang sudah ditentukan ukurannya (10 elemen). Program memanfaatkan beberapa fungsi terpisah untuk melakukan tugas spesifik: tampilkanArray untuk menampilkan isi array; cariMinimum dan cariMaksimum untuk menemukan nilai terkecil dan terbesar di dalam array melalui perulangan; dan hitungRataRata untuk menghitung rata-rata semua elemen. Fungsi utama (main) menyajikan menu interaktif, memungkinkan pengguna memilih operasi yang akan dijalankan secara berulang (do-while) hingga mereka memilih opsi untuk keluar.
 
 ##### Output 1
 ![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/main/MODUL%202/output2-1.png)
@@ -248,12 +247,14 @@ Program C++ ini dirancang sebagai alat bantu berbasis menu untuk melakukan anali
 
 
 ## Kesimpulan
-...
+Tiga program C++ ini menunjukkan kemampuan dasar pemrograman: yang pertama adalah kalkulator matriks yang bisa menjumlah, mengurangi, dan mengalikan dua matriks 3x3; yang kedua adalah contoh canggih yang menunjukkan dua cara mengubah nilai variabel asli (menggunakan Pointer dan Reference) di dalam fungsi; dan yang ketiga adalah aplikasi menu sederhana yang berfungsi untuk menganalisis data di dalam array, seperti menampilkan isinya, mencari nilai terbesar dan terkecil, serta menghitung rata-rata.
 
 ## Referensi
 [1]
-<br>Asyiknya Belajar Struktur Data di Planet C++. (n.d.). (n.p.):
-Elex Media Komputindo.
+<br>Silberschatz, A., Galvin, P. B., & Gagne, G. (t.t.). Process Concept. Diambil dari Operating System Concepts Website: https://belajark3.com/Materi_Lengkap_SML/Identifikasi_Sumber_Limbah_B3.pdf.
+
+[2]
+<br>Stroustrup, B. (2013). The C++ Programming Language (4th ed.). Addison-Wesley Professional.
 
 <br>
 
