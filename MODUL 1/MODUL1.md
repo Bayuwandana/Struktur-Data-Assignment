@@ -76,7 +76,7 @@ int main() {
 
 ```
 penjelasan singkat 2
-Program C++ ini berfungsi sebagai konverter sederhana yang dirancang untuk mengubah bilangan bulat dari 0 hingga 100 menjadi bentuk kata (terbilang) dalam Bahasa Indonesia. Inti dari kode ini meliputi validasi input untuk memastikan angka berada dalam jangkauan yang benar, penggunaan tiga array string sebagai kamus kata untuk satuan, belasan, dan puluhan, serta serangkaian struktur kondisional (if-else) yang cerdas. Struktur kondisional ini digunakan untuk menangani kasus khusus (0 dan 100), mengidentifikasi angka belasan, dan yang paling utama, memecah angka puluhan menjadi komponen puluhan dan satuan agar dapat disusun menjadi kata yang benar.
+PProgram $\text{C++}$ ini adalah sebuah konverter angka yang menerima masukan angka bulat dari $0$ hingga $100$ dari pengguna, lalu menggunakan larik kamus $\text{string}$ ($\text{satuan, belasan, puluhan}$) serta logika $\text{if-else}$ untuk menerjemahkan dan menampilkan angka tersebut ke dalam bentuk kata-kata Bahasa Indonesia (misalnya, angka $45$ dikonversi menjadi "Empat Puluh Lima").
 
 ### 3. ...
 
@@ -123,8 +123,7 @@ int main() {
 
 ```
 penjelasan singkat  3
-Program C++ ini berfungsi untuk menggambar pola piramida terbalik yang simetris di layar, di mana tinggi pola ditentukan oleh input bilangan bulat positif ($n$) dari pengguna. Pola ini dibuat menggunakan perulangan bersarang (for loops): satu set perulangan berfungsi untuk membuat baris (dari $n$ ke 1), mencetak spasi untuk indentasi, dan mencetak angka secara menurun lalu menaik di kedua sisi, dipisahkan oleh tanda bintang (*). Akhirnya, program menutup pola tersebut dengan satu bintang tunggal yang dicetak paling bawah setelah semua baris piramida selesai.
-
+Program $\text{C++}$ ini menerima sebuah angka bulat positif ($n$) dari pengguna, lalu menggunakan perulangan bersarang untuk mencetak sebuah pola visual berbentuk piramida terbalik yang simetris, di mana setiap barisnya dimulai dengan spasi untuk indentasi, diikuti oleh urutan angka dari $n$ menurun hingga $1$, dipisahkan oleh simbol bintang ($\mathbf{*}$), dan diakhiri dengan urutan angka dari $1$ menaik hingga $n$, sebelum pola ditutup dengan sebuah bintang tunggal di puncaknya.
 ##### Output 1
 ![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/main/MODUL%201/output1-1.png)
 
