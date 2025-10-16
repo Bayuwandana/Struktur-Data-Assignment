@@ -126,7 +126,7 @@ penjelasan singkat  3
 Program C++ ini berfungsi untuk menggambar pola piramida terbalik yang simetris di layar, di mana tinggi pola ditentukan oleh input bilangan bulat positif ($n$) dari pengguna. Pola ini dibuat menggunakan perulangan bersarang (for loops): satu set perulangan berfungsi untuk membuat baris (dari $n$ ke 1), mencetak spasi untuk indentasi, dan mencetak angka secara menurun lalu menaik di kedua sisi, dipisahkan oleh tanda bintang (*). Akhirnya, program menutup pola tersebut dengan satu bintang tunggal yang dicetak paling bawah setelah semua baris piramida selesai.
 
 ##### Output 1
-![Screenshot Output 1]()
+![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/main/MODUL%201/output1-1.png)
 
 ##### Output 2
 ![Screenshot Output 2](https://github.com/kyyyyraa/Struktur-Data-Assigment/blob/main/Modul-1/Output-1-2.jpg)
