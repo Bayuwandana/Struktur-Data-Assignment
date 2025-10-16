@@ -129,10 +129,10 @@ Program C++ ini berfungsi untuk menggambar pola piramida terbalik yang simetris 
 ![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/main/MODUL%201/output1-1.png)
 
 ##### Output 2
-![Screenshot Output 2](https://github.com/kyyyyraa/Struktur-Data-Assigment/blob/main/Modul-1/Output-1-2.jpg)
+![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/main/MODUL%201/output%201-2.png)
 
 ##### Output 3
-![Screenshot Output 3](https://github.com/kyyyyraa/Struktur-Data-Assigment/blob/main/Modul-1/Output-1-3.jpg)
+![Screenshot Output 3](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/main/MODUL%201/output1-3.png)
 
 
 ## Kesimpulan
