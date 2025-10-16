@@ -241,10 +241,10 @@ Program C++ ini dirancang sebagai alat bantu berbasis menu untuk melakukan anali
 ![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/main/MODUL%202/output2-1.png)
 
 ##### Output 2
-![Screenshot Output 2](https://github.com/kyyyyraa/Struktur-Data-Assigment/blob/main/Modul-2/Output-2-2.jpg)
+![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/main/MODUL%202/output2-2.png)
 
 ##### Output 3
-![Screenshot Output 3](https://github.com/kyyyyraa/Struktur-Data-Assigment/blob/main/Modul-2/Output-2-3.jpg)
+![Screenshot Output 3](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/main/MODUL%202/output2-3.png)
 
 
 ## Kesimpulan
