@@ -1,4 +1,4 @@
-<img width="322" height="393" alt="image" src="https://github.com/user-attachments/assets/f52ab240-fb29-4843-bd5b-75f5ee676427" /># <h1 align="center">Laporan Praktikum Modul 1 - Codeblocks IDE & Pengenalan Bahas C++ (1)</h1>
+# <h1 align="center">Laporan Praktikum Modul 1 - Codeblocks IDE & Pengenalan Bahas C++ (1)</h1>
 <p align="center">Bayu Wandana - 103112430159</p>
 
 ## Dasar Teori
