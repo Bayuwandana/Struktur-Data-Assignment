@@ -212,13 +212,13 @@ penjelasan singkat  3
 Program C++ ini adalah demonstrasi yang dirancang untuk membandingkan dua cara menukar nilai antar elemen di dua matriks $3 \times 3$ yang berbeda, yaitu Matriks A dan Matriks B. Program memulai dengan fungsi tukarElemen, yang secara langsung menukar nilai elemen pada koordinat yang ditentukan (misalnya $A[0][0]$ dengan $B[0][0]$) melalui pemanggilan fungsi. Setelah itu, program menunjukkan metode yang lebih canggih menggunakan fungsi tukarPointer, di mana ia menukar nilai yang ditunjuk oleh pointer (ptr1 menunjuk $A[1][1]$ dan ptr2 menunjuk $B[2][2]$), membuktikan bahwa manipulasi nilai dalam matriks dapat dilakukan baik secara langsung melalui indeks maupun secara tidak langsung melalui alamat memori (pointer).
 
 ##### Output 1
-![Screenshot Output 1](https://github.com/kyyyyraa/Struktur-Data-Assigment/blob/main/Modul-3/Output-3-1.jpg)
+![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/e1317bb72f296a38f1cf225be1452a92bf287a74/MODUL%203/output3-1.png)
 
 ##### Output 2
 ![Screenshot Output 2](https://github.com/kyyyyraa/Struktur-Data-Assigment/blob/main/Modul-3/Output-3-2.jpg)
 
 ##### Output 3
-![Screenshot Output 3](https://github.com/kyyyyraa/Struktur-Data-Assigment/blob/main/Modul-3/Output-3-3.jpg)
+![Screenshot Output 3](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/816cf5eaa4d6d0d73b4763ec82c90b88c8e31835/MODUL%203/output3-3.png)
 
 
 ## Kesimpulan
