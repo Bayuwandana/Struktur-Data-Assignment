@@ -215,18 +215,16 @@ Program C++ ini adalah demonstrasi yang dirancang untuk membandingkan dua cara m
 ![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/e1317bb72f296a38f1cf225be1452a92bf287a74/MODUL%203/output3-1.png)
 
 ##### Output 2
-![Screenshot Output 2](https://github.com/kyyyyraa/Struktur-Data-Assigment/blob/main/Modul-3/Output-3-2.jpg)
+![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/4f2f8b6c2dd73423be7728d82ed8e6a2e80410ba/MODUL%203/output%203-2.png)
 
 ##### Output 3
 ![Screenshot Output 3](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/816cf5eaa4d6d0d73b4763ec82c90b88c8e31835/MODUL%203/output3-3.png)
 
 
 ## Kesimpulan
-...
-
+Abstract Data Type (ADT) berfungsi sebagai spesifikasi kontrak formal dalam pengembangan perangkat lunak, yang secara ketat memisahkan antarmuka publik (apa yang dapat dilakukan oleh tipe data) dari implementasi internal (bagaimana tipe data tersebut bekerja).
 ## Referensi
 [1]
-<br>Chaniago, M. B., & Sastradipraja, C. K. (2022). Buku Ajar
-Algoritma dan Struktur Data. Kaizen Media Publishing.
+<br>Weiss, Mark Allen. (2014). Data Structures and Algorithm Analysis in C++ (4th ed.). Pearson Education.
 
 <br>
