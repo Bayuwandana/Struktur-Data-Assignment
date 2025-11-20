@@ -125,4 +125,4 @@ int main() {
 }
 ```
 ##### Output 1
-![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/e1317bb72f296a38f1cf225be1452a92bf287a74/MODUL%203/output3-1.png)
+![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/c824c104eb3c2abe22845d04d89061ce998e0523/assassment/soal%201.png)
