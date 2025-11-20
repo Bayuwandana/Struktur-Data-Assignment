@@ -167,5 +167,9 @@ int main() {
 } 
 ```
 ##### Output 3
-![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/c824c104eb3c2abe22845d04d89061ce998e0523/assassment/soal%201.png)
-
+![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/2ab8b38b2ae2715f19fc5f08e4e74b362da3963d/assassment/Screenshot%202025-11-20%20092443.png)
+![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/2ab8b38b2ae2715f19fc5f08e4e74b362da3963d/assassment/Screenshot%202025-11-20%20092453.png)
+![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/2ab8b38b2ae2715f19fc5f08e4e74b362da3963d/assassment/Screenshot%202025-11-20%20092523.png)
+![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/2ab8b38b2ae2715f19fc5f08e4e74b362da3963d/assassment/Screenshot%202025-11-20%20092532.png)
+![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/2ab8b38b2ae2715f19fc5f08e4e74b362da3963d/assassment/Screenshot%202025-11-20%20092532.png)
+![Screenshot Output 1](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/2ab8b38b2ae2715f19fc5f08e4e74b362da3963d/assassment/Screenshot%202025-11-20%20092545.png)
