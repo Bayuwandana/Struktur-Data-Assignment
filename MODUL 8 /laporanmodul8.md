@@ -511,7 +511,6 @@ Strategi ini memastikan bahwa posisi head selalu konsisten pada awal indeks sela
 
 ### queue.h
 ```C++
-//queue.h
 #ifndef QUEUE_H
 #define QUEUE_H
 
@@ -537,7 +536,9 @@ void printInfo(queue Q);
 
 #endif
 
-//queue.cpp
+```
+### queue.cpp
+```c++
 #include "queue.h"
 #include <iostream>
 
@@ -604,7 +605,9 @@ void printInfo(queue Q){
     cout << endl;
 }
 
-//main.cpp
+```
+### main.cpp
+```c++
 #include "queue.h"
 #include <iostream>
 
