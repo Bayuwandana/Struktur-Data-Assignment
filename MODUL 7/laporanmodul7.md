@@ -540,7 +540,8 @@ int main() {
 ### Output soal 1 :
 ![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/9748b4e698e991a84b68d66544c725593c5407ce/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20002218.png)
 
-Kode program ini merupakan implementasi komprehensif struktur data Stack berbasis Array statis yang mengandalkan variabel top untuk mengelola mekanisme LIFO (Last In First Out) melalui fungsi push dan pop, serta diperkaya dengan algoritma in-place reversal pada fungsi balikStack yang secara fisik menukar posisi elemen dari dasar ke puncak menggunakan teknik dua penunjuk (two pointers) untuk mengubah urutan data secara permanen di dalam memori..
+Kode program ini merupakan implementasi struktur data Stack menggunakan Array statis dengan kapasitas maksimal 20 elemen, yang beroperasi berdasarkan prinsip LIFO (Last In First Out) di mana penambahan data melalui fungsi push dan pengambilan data melalui fungsi pop sepenuhnya dikendalikan oleh variabel top sebagai penanda indeks puncak.
+Keunikan dari kode ini terletak pada fungsi balikStack, sebuah prosedur yang secara fisik membalikkan urutan elemen di dalam memori array menggunakan teknik two-pointer swapping (menukar elemen indeks awal dengan indeks akhir secara bergantian), sehingga elemen yang sebelumnya berada di dasar tumpukan berpindah menjadi elemen teratas tanpa memerlukan struktur data bantuan lainnya.
 
 ### soal 2. 
 
@@ -679,9 +680,9 @@ int main() {
 
 ```
 ### Output:
-![Screenshot Output 2](https://github.com/pamelasandra/Struktur-Data-Assignment/blob/main/Modul-7/Output-7-2.png)
+![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/5bf4c91dab2a69bb3bebe8e85bd6259123d1a41d/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20001648.png)
 
-Program ini mengimplementasikan struktur data Stack berbasis array dengan modifikasi khusus pada proses penyisipan datanya. Alih-alih memasukkan data secara biasa, program menggunakan fungsi pushAscending yang secara otomatis mengurutkan elemen dari nilai terkecil hingga terbesar pada saat ditambahkan ke dalam tumpukan. Setelah urutan tersebut ditampilkan melalui printInfo, program memanfaatkan fungsi balikStack untuk memutar balik seluruh urutan data yang ada. Hasil akhir dari proses pembalikan ini kemudian dicetak kembali menggunakan printInfo, sehingga pengguna dapat melihat data baik dalam kondisi terurut menaik maupun urutan sebaliknya.
+Kode program ini merupakan pengembangan dari implementasi Stack berbasis Array statis sebelumnya, yang kini dilengkapi dengan fitur cerdas pushAscending untuk menjaga agar data di dalam tumpukan selalu terurut dari nilai terkecil di dasar hingga nilai terbesar di puncak.
 
 ### soal 3.
 ### stack.h
