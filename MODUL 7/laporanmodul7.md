@@ -538,7 +538,7 @@ int main() {
 
 ```
 ### Output soal 1 :
-![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/e8737220e019968b524c8c9573ee678cc211e552/MODUL%207/hasil%20foto/Screenshot%202025-12-29%20234940.png)
+![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/9748b4e698e991a84b68d66544c725593c5407ce/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20002218.png)
 
 Kode program ini merupakan implementasi komprehensif struktur data Stack berbasis Array statis yang mengandalkan variabel top untuk mengelola mekanisme LIFO (Last In First Out) melalui fungsi push dan pop, serta diperkaya dengan algoritma in-place reversal pada fungsi balikStack yang secara fisik menukar posisi elemen dari dasar ke puncak menggunakan teknik dua penunjuk (two pointers) untuk mengubah urutan data secara permanen di dalam memori..
 
