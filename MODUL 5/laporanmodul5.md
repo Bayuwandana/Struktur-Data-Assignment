@@ -1,5 +1,5 @@
-# <h1 align="center">Laporan Praktikum Modul 5 - Singly Linked List (2)/h1>
-<p align="center">Muhammad Zacky Permana - 103112430159</p>
+# <h1 align="center">Laporan Praktikum Modul 5 - Singly Linked List (2)</h1>
+<p align="center">Bayu Wandana - 103112430159</p>
 
 ## Dasar Teori
 
