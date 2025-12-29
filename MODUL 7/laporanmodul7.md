@@ -1,5 +1,5 @@
 # <h1 align="center">Laporan Praktikum Modul 7 - Stack</h1>
-<p align="center">Pamela Sandra Amelia Br Ginting - 103112430152</p>
+<p align="center">Bayu Wandana - 103112430159</p>
 
 ## Dasar Teori
 Definisi Stack Stack merupakan struktur data linear yang beroperasi dengan mekanisme khusus, yakni seluruh aktivitas manipulasi data—baik penyisipan maupun pengambilan—dibatasi hanya pada satu gerbang akses yang disebut puncak (top). Mengacu pada kaidah LIFO (Last In, First Out), objek yang paling akhir diinput ke dalam sistem akan menjadi yang pertama kali dikeluarkan. Logika ini identik dengan tumpukan barang di kehidupan sehari-hari, di mana data bagian bawah terkunci dan baru bisa dijangkau setelah elemen-elemen di atasnya dilepaskan satu per satu.
