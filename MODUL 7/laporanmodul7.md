@@ -572,8 +572,9 @@ void pushAscending(Stack &S, int X);
 
 #endif
 
-
-//stack.cpp
+```
+### stack.cpp
+```C++
 #include "stack.h"
 #include <iostream>
 
@@ -683,9 +684,9 @@ int main() {
 Program ini mengimplementasikan struktur data Stack berbasis array dengan modifikasi khusus pada proses penyisipan datanya. Alih-alih memasukkan data secara biasa, program menggunakan fungsi pushAscending yang secara otomatis mengurutkan elemen dari nilai terkecil hingga terbesar pada saat ditambahkan ke dalam tumpukan. Setelah urutan tersebut ditampilkan melalui printInfo, program memanfaatkan fungsi balikStack untuk memutar balik seluruh urutan data yang ada. Hasil akhir dari proses pembalikan ini kemudian dicetak kembali menggunakan printInfo, sehingga pengguna dapat melihat data baik dalam kondisi terurut menaik maupun urutan sebaliknya.
 
 ### soal 3.
-
+### stack.h
 ```C++
-//stack.h
+
 #ifndef STACK_H
 #define STACK_H
 
@@ -712,8 +713,9 @@ void getInputStream(Stack &S);
 
 #endif
 
-
-//stack.cpp
+```
+### stack.cpp
+```C++
 #include "stack.h"
 #include <iostream>
 
@@ -805,8 +807,9 @@ void getInputStream(Stack &S) {
     }
 }
 
-
-//main.cpp
+```
+### main.cpp
+```C++
 #include "stack.h"
 #include <iostream>
 using namespace std;
