@@ -636,9 +636,9 @@ int main()
 }
 ```
 ### Output soal 2 :
-![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/5bf4c91dab2a69bb3bebe8e85bd6259123d1a41d/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20001648.png)
+![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/292f8e962e74d3d26a28ba3898dbd1eb976606df/MODUL%208%20/foto%20hasil/Screenshot%202025-12-30%20012500.png)
 
-Kode program ini merupakan pengembangan dari implementasi Stack berbasis Array statis sebelumnya, yang kini dilengkapi dengan fitur cerdas pushAscending untuk menjaga agar data di dalam tumpukan selalu terurut dari nilai terkecil di dasar hingga nilai terbesar di puncak.
+Kode program ini merupakan implementasi Queue Linear Dinamis berbasis array statis yang mengoperasikan mekanisme antrean dengan menggerakkan kedua penunjuk indeks secara progresif, di mana fungsi enqueue bertugas menambah data dengan menggeser penunjuk tail ke kanan sementara fungsi dequeue menghapus data cukup dengan menggeser penunjuk head maju tanpa perlu memindahkan posisi fisik elemen di dalam memori array. Pendekatan ini secara teknis lebih efisien dalam hal kecepatan eksekusi karena menghindari proses perulangan untuk menggeser data (shifting), namun memiliki karakteristik unik di mana ruang array yang sudah ditinggalkan oleh head akan menjadi area kosong yang tidak dapat diisi kembali hingga seluruh antrean dikosongkan. Untuk mengatasi keterbatasan memori tersebut, program menyertakan logika reset otomatis yang akan mengembalikan posisi head dan tail ke indeks awal jika semua elemen telah dikeluarkan, sehingga integritas prinsip FIFO (First In First Out) tetap terjaga sambil memastikan sistem dapat menerima input baru dari posisi dasar array kembali.
 
 ### soal 3.
 ### queue.h
