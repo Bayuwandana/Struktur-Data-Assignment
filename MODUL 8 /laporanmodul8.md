@@ -15,7 +15,7 @@ Enqueue adalah prosedur penyisipan data ke dalam antrean, di mana setiap elemen 
 Dequeue adalah prosedur ekstraksi atau penghapusan elemen dari antrean, yang dilakukan secara konsisten pada elemen yang berada di posisi terdepan untuk menjaga urutan pemrosesan.
 
 ### GUIDED 1
-### . [.Penggunaan Queue] 
+### . [Penggunaan Queue] 
 
 ### queue.h
 ```C++
@@ -370,128 +370,136 @@ int main(){
 Kode program ini merupakan implementasi struktur data Queue (Antrean) berbasis Array statis yang secara komprehensif mendemonstrasikan tiga jenis logika operasional yang berbeda yaitu antrean linear statis dengan posisi kepala tetap, antrean linear dinamis dengan kedua penunjuk bergerak, serta antrean sirkular yang memanfaatkan operator modulus untuk efisiensi ruang memori. Secara teknis, kode yang aktif menjalankan metode antrean linear statis di mana penambahan data melalui enQueue akan menggerakkan penunjuk tail hingga batas maksimal lima elemen, sementara proses deQueue dilakukan dengan cara menghapus data di posisi head lalu secara otomatis menggeser seluruh elemen yang tersisa di belakangnya ke depan agar posisi terdepan selalu berada pada indeks nol. Pendekatan ini memastikan bahwa urutan data tetap terjaga sesuai prinsip FIFO (First In, First Out), meskipun sistem juga telah menyiapkan logika alternatif dalam bentuk komentar untuk mengubah antrean menjadi model dinamis yang hanya menggerakkan indeks atau model sirkular yang memungkinkan tail berputar kembali ke indeks awal jika masih terdapat ruang kosong yang tersedia.
 ## Unguided
 
-## Soal 1
-### stack.h
-```C++
-
-#ifndef STACK_H
-#define STACK_H
+## soal 1. [alternatif 1]
+### queue.h
+```c++
+#ifndef QUEUE_H
+#define QUEUE_H
 
 #include <iostream>
 using namespace std;
 
 typedef int infotype;
 
-const int MAX = 20;
+const int MAX = 5;
 
-struct Stack{
-    int data[MAX];
-    int top;
-
+struct queue {
+    int info[MAX];
+    int head;
+    int tail;
 };
 
-void createStack(Stack &S);
-void push(Stack &S, infotype x);
-infotype pop(Stack &S);
-void printInfo(Stack S);
-void balikStack(Stack &S);
+void createQueue(queue &Q);
+bool isEmpty(queue Q);
+bool isFull(queue Q);
+int enqueue(queue &Q, infotype X); 
+void dequeue(queue &Q);
+void printInfo(queue Q);
 
 #endif
 
 ```
-### stack.cpp
-```C++
-#include "stack.h"
+### queue.cpp
+```c++
+#include "queue.h"
 #include <iostream>
 
 using namespace std;
 
-void createStack(Stack &S) {
-    S.top = -1;
-}
-
-void push(Stack &S, infotype X) {
-    if(S.top == MAX - 1){
-        cout << "Stack Penuh!" << endl;
+bool isEmpty(queue Q){
+    if(Q.head == -1 && Q.tail == -1){
+        return true;
     } else {
-        S.top++;
-        S.data[S.top] = X;
+        return false;
     }
 }
 
-infotype pop(Stack &S) {
-    if(S.top == - 1){
-        cout << "Stack kosong!" << endl;
-        return -1;
+bool isFull(queue Q){
+    if(Q.tail == MAX - 1 ){
+        return true;
     } else {
-        int val = S.data[S.top];
-        S.top--;
-        return val;
+        return false;
     }
 }
 
-void printInfo(Stack S) {
-    if(S.top == - 1){
-        cout << "Stack Kosong!" << endl;
+
+void createQueue(queue &Q){ 
+    Q.head = -1;
+    Q.tail = -1;
+}
+ 
+
+
+int enqueue(queue &Q, infotype X){
+    if(isFull(Q) == true){
+        cout << "Queue sudah penuh!" << endl;
     } else {
-        cout << "[TOP] " ;
-        for(int i = S.top; i >= 0; --i){
-            cout << S.data[i] << " ";
+        if(isEmpty(Q) == true){
+            Q.head = Q.tail = 0;
+        } else {
+            Q.tail++;
+        }
+        Q.info[Q.tail] = X;
+    }
+    return 0;
+}
+
+void dequeue(queue &Q){
+    if(isEmpty(Q)){
+        cout << "Queue kosong!" << endl;
+    } else {
+        for(int i = Q.head; i < Q.tail; i++){
+            Q.info[i] = Q.info[i+1];
+        }
+        Q.tail--;
+        if(Q.tail < Q.head){ 
+            Q.head = -1;
+            Q.tail = -1;
+        }
+    }
+}
+
+void printInfo(queue Q){
+      cout << Q.head << " - " << Q.tail << " | ";
+    if(isEmpty(Q) == true){
+        cout << "Empty Queue";
+    } else {
+        for(int i = Q.head; i <= Q.tail; i++){
+            cout << Q.info[i] << " ";
         }
     }
     cout << endl;
 }
 
-void balikStack(Stack &S) {
-    if(S.top == - 1){
-        cout << "Stack Kosong!" << endl;
-    } else {
-        if (S.top <= 0) return;
-    }
-
-    int i = 0;
-    int j = S.top;
-
-    while (i < j) {
-        int temp = S.data[i];
-        S.data[i] = S.data[j];
-        S.data[j] = temp;
-        i++;
-        j--; 
-    }
-}
-
 ```
-### main.cpp
-```C++
-#include "stack.h"
+//main.cpp
+```c++
+#include "queue.h"
 #include <iostream>
+
 using namespace std;
 
-int main() {
-    cout << "Hello world!" << endl;
+int main()
+{
+    cout << "Hello World" << endl;
+    queue Q;
+    createQueue(Q);
 
-    Stack S;
-    createStack(S);
-
-    push(S, 3);
-    push(S, 4);
-    push(S, 8);
-    pop(S);
-    push(S, 2);
-    push(S, 3);
-    pop(S);
-    push(S, 9);
-
-    printInfo(S);
-
-    cout << "balik stack" << endl;
-    balikStack(S);
-    printInfo(S);
+    cout << "----------------------" << endl;
+    cout << " H - T \t | Queue info" << endl;
+    cout << "----------------------" << endl;
+    printInfo(Q);
+    enqueue(Q, 5); printInfo(Q);
+    enqueue(Q, 2); printInfo(Q);
+    enqueue(Q, 7); printInfo(Q);
+    dequeue(Q);    printInfo(Q);
+    dequeue(Q);    printInfo(Q);
+    enqueue(Q, 4); printInfo(Q);
+    dequeue(Q);    printInfo(Q);
+    dequeue(Q);    printInfo(Q);
 
     return 0;
 }
-
 ```
 ### Output soal 1 :
 ![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/9748b4e698e991a84b68d66544c725593c5407ce/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20002218.png)
