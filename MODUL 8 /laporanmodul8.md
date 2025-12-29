@@ -15,7 +15,7 @@ Enqueue adalah prosedur penyisipan data ke dalam antrean, di mana setiap elemen 
 Dequeue adalah prosedur ekstraksi atau penghapusan elemen dari antrean, yang dilakukan secara konsisten pada elemen yang berada di posisi terdepan untuk menjaga urutan pemrosesan.
 
 ### GUIDED 1
-### . [Penggunaan Queue] 
+### [Penggunaan Queue] 
 
 ### queue.h
 ```C++
@@ -150,7 +150,7 @@ Kode program ini merupakan implementasi Queue menggunakan Linked List dinamis ya
 
 
 ## Guided 2
-### . [Penggunaan Queue dengan beberapa implementasi] 
+### [Penggunaan Queue dengan beberapa implementasi] 
 
 ### queue.h
 ```C++
@@ -507,7 +507,7 @@ int main()
 Kode program ini merupakan implementasi struktur data Queue (Antrean) berbasis Array statis yang menggunakan metode pergeseran elemen (shifting) untuk menjaga agar posisi depan antrean selalu tetap, di mana seluruh operasi data diatur oleh indikator head dan tail dengan kapasitas maksimal lima elemen bertipe integer. Program ini bekerja berdasarkan prinsip FIFO (First In, First Out), yang berarti data yang dimasukkan pertama kali melalui fungsi enqueue akan menempati indeks nol dan menggerakkan penunjuk tail ke kanan, sementara proses penghapusan melalui fungsi dequeue akan mengambil data dari posisi head lalu secara otomatis menjalankan perulangan untuk menggeser semua elemen di belakangnya satu langkah ke depan guna mengisi kekosongan posisi.
 Strategi ini memastikan bahwa posisi head selalu konsisten pada awal indeks selama antrean tidak kosong, namun memiliki konsekuensi performa berupa kompleksitas waktu linear karena adanya proses pemindahan data setiap kali elemen terdepan dikeluarkan. Ketika semua elemen telah dikeluarkan hingga nilai tail melewati batas bawah head, sistem secara cerdas akan mereset kedua penunjuk kembali ke angka negatif satu sebagai tanda bahwa kondisi antrean telah kembali kosong sepenuhnya.
 
-### soal 2. 
+### soal 2. [alternatif 2]
 
 ### queue.h
 ```C++
@@ -640,7 +640,7 @@ int main()
 
 Kode program ini merupakan implementasi Queue Linear Dinamis berbasis array statis yang mengoperasikan mekanisme antrean dengan menggerakkan kedua penunjuk indeks secara progresif, di mana fungsi enqueue bertugas menambah data dengan menggeser penunjuk tail ke kanan sementara fungsi dequeue menghapus data cukup dengan menggeser penunjuk head maju tanpa perlu memindahkan posisi fisik elemen di dalam memori array. Pendekatan ini secara teknis lebih efisien dalam hal kecepatan eksekusi karena menghindari proses perulangan untuk menggeser data (shifting), namun memiliki karakteristik unik di mana ruang array yang sudah ditinggalkan oleh head akan menjadi area kosong yang tidak dapat diisi kembali hingga seluruh antrean dikosongkan. Untuk mengatasi keterbatasan memori tersebut, program menyertakan logika reset otomatis yang akan mengembalikan posisi head dan tail ke indeks awal jika semua elemen telah dikeluarkan, sehingga integritas prinsip FIFO (First In First Out) tetap terjaga sambil memastikan sistem dapat menerima input baru dari posisi dasar array kembali.
 
-### soal 3.
+### soal 3. [alternatif 3]
 ### queue.h
 ```C++
 #ifndef QUEUE_H
@@ -670,76 +670,112 @@ void printInfo(queue Q);
 
 ```
 ### queue.cpp
-```C++
+```c++
 #include "queue.h"
 #include <iostream>
 
 using namespace std;
 
-bool isEmpty(queue Q){
-    if(Q.head == -1 && Q.tail == -1){
+bool isEmpty(queue Q)
+{
+    if (Q.head == -1 && Q.tail == -1)
+    {
         return true;
-    } else {
+    }
+    else
+    {
         return false;
     }
 }
 
-bool isFull(queue Q){
-    if(Q.tail == MAX - 1 ){
+bool isFull(queue Q)
+{
+    if ((Q.tail + 1) % MAX == Q.head)
+    {
         return true;
-    } else {
+    }
+    else
+    {
         return false;
     }
 }
 
-
-void createQueue(queue &Q){ 
+void createQueue(queue &Q)
+{
     Q.head = -1;
     Q.tail = -1;
 }
 
-int enqueue(queue &Q, infotype X){
-    if(isFull(Q) == true){
+int enqueue(queue &Q, infotype X)
+{
+    if (isFull(Q) == true)
+    {
         cout << "Queue sudah penuh!" << endl;
-    } else {
-        if(isEmpty(Q) == true){
+    }
+    else
+    {
+        if (isEmpty(Q) == true)
+        {
             Q.head = Q.tail = 0;
-        } else {
-            Q.tail++;
+        }
+        else
+        {
+            Q.tail = (Q.tail + 1) % MAX;
         }
         Q.info[Q.tail] = X;
     }
     return 0;
 }
 
-
-void dequeue(queue &Q){
-     if(isEmpty(Q) == true){
-         cout << "Queue kosong!" << endl;
-     } else {
-         Q.head++;
-         if(Q.head > Q.tail){
-             Q.head = -1;
-             Q.tail = -1;
-         }
-     }
- }
-
-void printInfo(queue Q){
-      cout << Q.head << " - " << Q.tail << " | ";
-    if(isEmpty(Q) == true){
-        cout << "Empty Queue";
-    } else {
-        for(int i = Q.head; i <= Q.tail; i++){
-            cout << Q.info[i] << " ";
+void dequeue(queue &Q)
+{
+    if (isEmpty(Q) == true)
+    {
+        cout << "Queue kosong!" << endl;
+    }
+    else
+    {
+        if (Q.head == Q.tail)
+        {
+            Q.head = -1;
+            Q.tail = -1;
+        }
+        else
+        {
+            Q.head = (Q.head + 1) % MAX;
         }
     }
-    cout << endl;
+}
+
+void printInfo(queue Q)
+{
+    if (isEmpty(Q) == true)
+    {
+    cout << Q.head << " - " << Q.tail << " | Empty Queue" << endl;
+    return;
+    }
+    else
+    {
+        cout << Q.head << " - " << Q.tail << " | ";
+        int i = Q.head;
+        int count = 1;
+        while (true)
+        {
+            cout << Q.info[i] << " ";
+
+            if (i == Q.tail)
+                break;
+
+            cout << " ";
+            i = (i + 1) % MAX;
+        }
+        cout << endl;
+    }
 }
 
 ```
 ### main.cpp
-```C++
+```c++
 #include "queue.h"
 #include <iostream>
 
@@ -771,14 +807,15 @@ int main()
 ### Output soal 3:
 ![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/f66078fc2a30647d5e246c7d0e237b454b0cfd9b/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20003037.png)
 
-
-Kode ini mengimplementasikan Stack berbasis Array yang mampu membaca input angka secara langsung dari pengguna, menyimpannya dengan aturan LIFO, dan memiliki kemampuan untuk membalikkan urutan data secara fisik di dalam memori array.
+Kode program ini merupakan implementasi struktur data Circular Queue (Antrean Melingkar) berbasis array statis yang secara cerdas memanfaatkan operator modulus untuk memungkinkan penunjuk head dan tail berputar kembali ke indeks awal saat mencapai batas maksimal array. Berbeda dengan antrean linear yang membuang ruang kosong di depan setelah proses penghapusan, mekanisme sirkular ini memastikan efisiensi penggunaan memori karena posisi yang telah ditinggalkan oleh data lama dapat diisi kembali oleh data baru selama antrean belum penuh secara logika. Penentuan kondisi penuh dilakukan dengan memeriksa apakah posisi tail berikutnya akan menabrak head, sementara proses pengosongan data diselesaikan dengan menggeser head secara melingkar atau mengatur ulang kedua penunjuk ke angka negatif satu jika elemen terakhir telah dikeluarkan, sehingga integritas prinsip FIFO tetap terjaga dengan optimalitas ruang yang jauh lebih baik.
 
 ### Kesimpulan
-Program ini merupakan model Stack yang komprehensif karena tidak hanya menjalankan fungsi standar LIFO (Last In First Out), tetapi juga mengintegrasikan fungsi filtering untuk hanya menerima input bertipe numerik, fungsi sorting otomatis melalui penggunaan tumpukan sementara (temporary stack), dan fungsi reversal fisik menggunakan algoritma two-pointer swapping. Dengan kapasitas statis sebesar 20 elemen, kode ini sangat efektif untuk mendemonstrasikan bagaimana data dapat dimanipulasi di dalam memori array tanpa kehilangan integritas struktur tumpukannya.
-
+Kode ini mengimplementasikan struktur data Circular Queue (Antrean Melingkar) berbasis array statis yang memanfaatkan aritmatika modulus untuk mengoptimalkan penggunaan memori dengan cara memungkinkan penunjuk head dan tail berputar kembali ke indeks awal array.
 
 ## Referensi
-[1] GeeksforGeeks - Stack Data Structure: https://www.geeksforgeeks.org/stack-data-structure/
+[1] GeeksforGeeks - Circular Queue Data Structure: https://www.geeksforgeeks.org/introduction-to-circular-queue/
 
-[2]Sorting a Stack using a Temporary Stack: https://www.geeksforgeeks.org/sort-a-stack-using-a-temporary-stack/
+[2] Programiz - Circular Queue Implementation: https://www.programiz.com/dsa/circular-queue
+
+[3] Tutorialspoint - Queue Data Structure: https://www.tutorialspoint.com/data_structures_algorithms/queue_algorithm.htm
+ 
