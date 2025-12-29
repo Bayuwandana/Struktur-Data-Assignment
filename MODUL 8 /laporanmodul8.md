@@ -14,7 +14,8 @@ Enqueue adalah prosedur penyisipan data ke dalam antrean, di mana setiap elemen 
 2. Dequeue
 Dequeue adalah prosedur ekstraksi atau penghapusan elemen dari antrean, yang dilakukan secara konsisten pada elemen yang berada di posisi terdepan untuk menjaga urutan pemrosesan.
 
-### . [stack menggunakan linked list] 
+### GUIDED 1
+### . [.Penggunaan Queue] 
 
 ### queue.h
 ```C++
