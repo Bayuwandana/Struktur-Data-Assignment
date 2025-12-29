@@ -805,7 +805,7 @@ int main()
 
 ```
 ### Output soal 3:
-![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/f66078fc2a30647d5e246c7d0e237b454b0cfd9b/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20003037.png)
+![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/f1e1f8bedb50fa957ac15f21139c6cd93ede5224/MODUL%208%20/foto%20hasil/Screenshot%202025-12-30%20013558.png)
 
 Kode program ini merupakan implementasi struktur data Circular Queue (Antrean Melingkar) berbasis array statis yang secara cerdas memanfaatkan operator modulus untuk memungkinkan penunjuk head dan tail berputar kembali ke indeks awal saat mencapai batas maksimal array. Berbeda dengan antrean linear yang membuang ruang kosong di depan setelah proses penghapusan, mekanisme sirkular ini memastikan efisiensi penggunaan memori karena posisi yang telah ditinggalkan oleh data lama dapat diisi kembali oleh data baru selama antrean belum penuh secara logika. Penentuan kondisi penuh dilakukan dengan memeriksa apakah posisi tail berikutnya akan menabrak head, sementara proses pengosongan data diselesaikan dengan menggeser head secara melingkar atau mengatur ulang kedua penunjuk ke angka negatif satu jika elemen terakhir telah dikeluarkan, sehingga integritas prinsip FIFO tetap terjaga dengan optimalitas ruang yang jauh lebih baik.
 
