@@ -109,7 +109,7 @@ void clearQueue(queue &Q) {
 }
 
 ```
-//main.cpp
+### main.cpp
 ```C++
 #include "queue.h"
 #include "queue.cpp"
@@ -149,190 +149,225 @@ int main() {
 Kode program ini merupakan implementasi Queue menggunakan Linked List dinamis yang mengelola data berdasarkan prinsip FIFO (First In, First Out), di mana setiap penambahan nama baru melalui enQueue akan ditempatkan pada posisi tail (belakang) dan setiap penghapusan melalui deQueue dilakukan pada posisi head (depan) untuk menjamin urutan pelayanan yang adil sesuai urutan kedatangan.
 
 
-## Guided 1
+## Guided 2
+### . [Penggunaan Queue dengan beberapa implementasi] 
 
-### . [Stack menggunakan fungsi array] 
-
-### stack.h
+### queue.h
 ```C++
-
-#ifndef STACK_TABLE
-#define STACK_TABLE
+#ifndef QUEUE_H
+#define QUEUE_H
 
 #include <iostream>
 using namespace std;
 
-const int MAX = 10;
+const int MAKSIMAL = 5;
 
-struct stackTable{
-    int data[MAX];
-    int top; // -1 = kosong
-
+struct queue {
+    string nama[MAKSIMAL];
+    int head;
+    int tail;
 };
 
-bool isEmpty(stackTable s);
-bool isFull(stackTable s);
-void createStack(stackTable &s);
-
-void push(stackTable &s, int angka);
-void pop(stackTable &s);
-void update(stackTable &s, int posisi);
-void view(stackTable s);
-void searchData(stackTable s, int data);
+bool isFull(queue Q);
+bool isEmpty(queue Q);
+void createQueue(queue &Q); //terbentuk queue dengan head = -1 dan tail = -1
+void enQueue(queue &Q, string nama); 
+void deQueue(queue &Q);
+void viewQueue(queue Q);
 
 #endif
 
 ```
-### stack.cpp
+### queue.cpp
 ```C++
-#include "stack.h"
+#include "queue.h"
 #include <iostream>
 
 using namespace std;
 
-bool isEmpty(stackTable s) {
-    return s.top == -1;
-}
+// NOTE : 
+// Implementasi 1 = head diam, tail bergerak (Queue Linear Statis, kerana head nya tetap diam)
+// Implementasi 2 = head bergerak, tail bergerak (Queue Linear Dinamis, karena head & tail nya sama-sama bergerak)
+// Implementasi 3 = head dan tail berputar (Queue Circular, karena jika udh mentok tapi masih ada space, diputar sehingga tail bisa ada didepan head)
 
-bool isFull(stackTable s){
-    return s.top == MAX -1;
-}
-
-void createStack(stackTable &s) {
-    s.top = -1;
-}
-
-void push(stackTable &s, int angka){
-    if(isFull(s)){
-        cout << "Stack Penuh!" << endl;
+bool isEmpty(queue Q){
+    if(Q.head == -1 && Q.tail == -1){
+        return true;
     } else {
-        s.top++;
-        s.data[s.top] = angka;
-        cout << "Data " << angka << " berhasil ditambahkan kedalam stack!" << endl;
+        return false;
     }
 }
 
-void pop(stackTable &s){
-    if(isEmpty(s)){
-        cout << "Stack kosong!" << endl;
+//isFull implmenetasi 1 & 2
+bool isFull(queue Q){
+    if(Q.tail == MAKSIMAL - 1){
+        return true;
     } else {
-        int val = s.data[s.top];
-        s.top--;
-        cout << "Data " << val << " Berhasil dihapus dari stack!" << endl;
+        return false;
     }
 }
 
-void update(stackTable &s, int posisi){
-    if(isEmpty(s)){
-        cout << "Stack kosong!" << endl;
-        return;
-    }
-    if(posisi <= 0){
-        cout << "Posisi tidak valid!" << endl;
-        return;
-    }
+// //isFull implementasi 3
+// bool isFull(queue Q){
+//     if((Q.tail + 1) % MAKSIMAL == Q.head){
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 
-    //index = top - (posisi -1)
-    int idx = s.top - (posisi -1);
-    if(idx < 0 || idx > s.top){
-        cout << "Posisi " << posisi << " Tidak valid!" << endl;
-        return;
-    }
-
-    cout << "Update data posisi ke-" << posisi << endl;
-    cout << "Masukkan angka: ";
-    cin >> s.data[idx];
-    cout << "Data berhasil diupdate!" << endl;
-    cout << endl;
+void createQueue(queue &Q){ //terbentuk queue dengan head = -1 dan tail = -1 
+    Q.head = -1;
+    Q.tail = -1;
 }
+ 
 
-void view(stackTable s){
-    if(isEmpty(s)){
-        cout << "Stack Kosong!" << endl;
+//enqueue implementasi 1 & 2
+void enQueue(queue &Q, string nama){
+    if(isFull(Q) == true){
+        cout << "Queue sudah penuh!" << endl;
     } else {
-        for(int i = s.top; i >= 0; --i){
-            cout << s.data[i] << " ";
+        if(isEmpty(Q) == true){
+            Q.head = Q.tail = 0;
+        } else {
+            Q.tail++;
+        }
+        Q.nama[Q.tail] = nama;
+        cout << "nama " << nama << " berhasil ditambahkan kedalam queue!" << endl;
+    }
+}
+
+// //enQueue implementasi 3
+// void enQueue(queue &Q, string nama){
+//     if(isFull(Q) == true){
+//         cout << "Queue sudah penuh!" << endl;
+//     } else {
+//         if(isEmpty(Q) == true){
+//             Q.head = Q.tail = 0;
+//         } else {
+//             Q.tail = (Q.tail + 1) % MAKSIMAL; // bergerak melingkar
+//         }
+//         Q.nama[Q.tail] = nama;
+//         cout << "nama " << nama << " berhasil ditambahkan kedalam queue!" << endl;
+//     }
+// }
+
+//dequeue implementasi 1
+void deQueue(queue &Q){
+    if(isEmpty(Q) == true){
+        cout << "Queue kosong!" << endl;
+    } else {
+        cout << "Mengahapus data " << Q.nama[Q.head] << "..." << endl;
+        for(int i = 0; i < Q.tail; i++){
+            Q.nama[i] =  Q.nama[i+1];
+        }
+        Q.tail--;
+        if(Q.tail < 0){ //kalo semua isi queue nya udh dikelaurin, set head & tail ke -1
+            Q.head = -1;
+            Q.tail = -1;
+        }
+    }
+}
+
+// //dequeue implementasi 2
+// void deQueue(queue &Q){
+//     if(isEmpty(Q) == true){
+//         cout << "Queue kosong!" << endl;
+//     } else {
+//         cout << "Mengahapus data " << Q.nama[Q.head] << "..." << endl;
+//         Q.head++;
+//         if(Q.head > Q.tail){ //kalo elemennya udh abis (head akan lebih 1 dari tail), maka reset ulang head & tail ke -1
+//             Q.head = -1;
+//             Q.tail = -1;
+//         }
+//     }
+// }
+
+// //deQueue implementasi 3
+// void deQueue(queue &Q){
+//     if(isEmpty(Q) == true){
+//         cout << "Queue kosong!" << endl;
+//     } else {
+//         cout << "Mengahapus data " << Q.nama[Q.head] << "..." << endl;
+//         if(Q.head == Q.tail){ //kalo elemennya tinggal 1, langsungkan saja head & tail nya reset ke -1
+//             Q.head = -1;
+//             Q.tail = -1;
+//         } else {
+//             Q.head = (Q.head + 1) % MAKSIMAL; // bergerak melingkar
+//         }
+//     }
+// }
+
+//viewQueue implementasi 1 & 2
+void viewQueue(queue Q){
+    if(isEmpty(Q) == true){
+        cout << "Queue kosong!" << endl;
+    } else {
+        for(int i = Q.head; i <= Q.tail; i++){
+            cout << i -  Q.head + 1 << ". " << Q.nama[i] << endl;
         }
     }
     cout << endl;
 }
 
-void searchData(stackTable s, int data){
-    if(isEmpty(s)){
-        cout << "Stack Kosong!" << endl;
-        return;
-    }
-    cout << "Mencari data" << data << "..." << endl;
-    int posisi = 1;
-    bool found = false;
-
-    for(int i = s.top; i >= 0; --i){
-        if(s.data[i] == data){
-            cout << "Data " << data << " ditemukan pada posisi ke-" << posisi << endl;
-            cout << endl;
-            found = true;
-            break;
-        }
-        posisi++;
-    }
-
-    if(!found){
-        cout << "Data " << data << " tidak ditemukan didalam stack!" << endl;
-        cout << endl;
-    }
-}
+// //viewQueue implementasi 3
+// void viewQueue(queue Q){
+//     if(isEmpty(Q) == true){
+//         cout << "Queue kosong!" << endl;
+//     } else {
+//         int i = Q.head;
+//         int count = 1;
+//         while(true){
+//             cout << count << ". " << Q.nama[i] << endl;
+//             if(i == Q.tail){
+//                 break;
+//             }
+//             i = (i + 1) % MAKSIMAL;
+//             count++;
+//         }   
+//     }
+// }
 
 ```
 ### main.cpp
 ```C++
-#include "stack.h"
+#include "queue.h"
+#include "queue.cpp"
 #include <iostream>
 
 using namespace std;
 
 int main(){
-    stackTable s;
-    createStack(s);
+    queue Q;
 
-    push(s, 1);
-    push(s, 2);
-    push(s, 3);
-    push(s, 4);
-    push(s, 5);
+    createQueue(Q);
+    enQueue(Q, "dhimas");
+    enQueue(Q, "Arvin");
+    enQueue(Q, "Rizal");
+    enQueue(Q, "Hafizh");
+    enQueue(Q, "Fathur");
+    enQueue(Q, "Daffa");
     cout << endl;
 
-    cout << "--- Stack setelah push ---" << endl;
-    view(s);
+    cout << "--- Isi Queue Setelah enQueue ---" << endl;
+    viewQueue(Q);
     cout << endl;
 
-    pop(s);
-    pop(s);
+    deQueue(Q);
+    deQueue(Q);
+    deQueue(Q);
+    deQueue(Q);
+    // deQueue(Q);
+    // deQueue(Q);
     cout << endl;
 
-    cout << "--- Stack setelah pop 2 kali ---" << endl;
-    view(s);
-    cout << endl;
-
-    //Posisi dihitung dari TOP(1-based)
-    update(s, 2);
-    update(s, 1);
-    update(s, 4);
-    cout << endl;
-
-    cout << "--- Stack setelah update ---" << endl;
-    view(s);
-    cout << endl;
-
-    searchData(s, 4);
-    searchData(s, 9);
+    cout << "--- Isi Queue Setelah deQueue ---" << endl;
+    viewQueue(Q);
 
     return 0;
 }
-
 ```
-Kode program tersebut merupakan implementasi struktur data Stack menggunakan Array statis dengan kapasitas terbatas sebanyak 10 elemen, di mana pengelolaan seluruh datanya dikendalikan oleh variabel top yang berfungsi sebagai penanda indeks posisi elemen paling atas.
-Secara operasional, program ini menerapkan prinsip LIFO (Last In First Out) melalui fungsi push yang akan menaikkan nilai top saat data ditambah dan fungsi pop yang akan menurunkan nilai top saat data dihapus, dengan tambahan fitur validasi untuk mendeteksi kondisi Stack Penuh (overflow) maupun Stack Kosong (underflow).
-Selain operasi dasar tersebut, kode ini memiliki kecerdasan dalam mengakses data secara spesifik melalui fungsi update dan searchData yang menggunakan perhitungan indeks mundur untuk memproses elemen berdasarkan urutan posisinya dari atas ke bawah.
+Kode program ini merupakan implementasi struktur data Queue (Antrean) berbasis Array statis yang secara komprehensif mendemonstrasikan tiga jenis logika operasional yang berbeda yaitu antrean linear statis dengan posisi kepala tetap, antrean linear dinamis dengan kedua penunjuk bergerak, serta antrean sirkular yang memanfaatkan operator modulus untuk efisiensi ruang memori. Secara teknis, kode yang aktif menjalankan metode antrean linear statis di mana penambahan data melalui enQueue akan menggerakkan penunjuk tail hingga batas maksimal lima elemen, sementara proses deQueue dilakukan dengan cara menghapus data di posisi head lalu secara otomatis menggeser seluruh elemen yang tersisa di belakangnya ke depan agar posisi terdepan selalu berada pada indeks nol. Pendekatan ini memastikan bahwa urutan data tetap terjaga sesuai prinsip FIFO (First In, First Out), meskipun sistem juga telah menyiapkan logika alternatif dalam bentuk komentar untuk mengubah antrean menjadi model dinamis yang hanya menggerakkan indeks atau model sirkular yang memungkinkan tail berputar kembali ke indeks awal jika masih terdapat ruang kosong yang tersedia.
 ## Unguided
 
 ## Soal 1
