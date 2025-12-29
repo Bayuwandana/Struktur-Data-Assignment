@@ -679,7 +679,7 @@ int main() {
 }
 
 ```
-### Output:
+### Output soal 2 :
 ![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/5bf4c91dab2a69bb3bebe8e85bd6259123d1a41d/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20001648.png)
 
 Kode program ini merupakan pengembangan dari implementasi Stack berbasis Array statis sebelumnya, yang kini dilengkapi dengan fitur cerdas pushAscending untuk menjaga agar data di dalam tumpukan selalu terurut dari nilai terkecil di dasar hingga nilai terbesar di puncak.
@@ -828,16 +828,17 @@ int main() {
 }
 
 ```
-### Output:
-![Screenshot Output 2](https://github.com/pamelasandra/Struktur-Data-Assignment/blob/main/Modul-7/Output-7-3.png)
+### Output soal 3:
+![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/f66078fc2a30647d5e246c7d0e237b454b0cfd9b/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20003037.png)
 
 
-Program ini mengimplementasikan struktur data Stack berbasis array dengan mekanisme input yang lebih interaktif, di mana pengguna dapat memasukkan sejumlah data secara berurutan hingga prosesnya dihentikan dengan menekan tombol Enter. Perbedaan utama pada versi ini adalah tidak digunakannya fungsi push konvensional; sebagai gantinya, program memanfaatkan fungsi getInputStream untuk menangkap aliran data secara terus-menerus hingga kapasitas array mencapai batas maksimal. Setelah seluruh data tersimpan, program menjalankan fungsi balikStack untuk memutar balik urutan elemen di dalam tumpukan, lalu menggunakan prosedur printInfo untuk menampilkan hasil akhir tersebut ke layar.
+Kode ini mengimplementasikan Stack berbasis Array yang mampu membaca input angka secara langsung dari pengguna, menyimpannya dengan aturan LIFO, dan memiliki kemampuan untuk membalikkan urutan data secara fisik di dalam memori array.
 
 ### Kesimpulan
-Pembelajaran ini memberikan pemahaman mendalam mengenai struktur data Stack yang telah dimodifikasi dengan berbagai fitur fungsional. Mahasiswa mempelajari penggunaan fungsi pushAscending, sebuah metode penyisipan data yang secara otomatis mengurutkan elemen sehingga nilai terbesar berada di posisi puncak (top) dan nilai terkecil berada di dasar tumpukan. Selain itu, program ini menawarkan fleksibilitas input bagi pengguna melalui fungsi getStreamInput, yang memungkinkan pengisian data secara manual hingga mencapai kapasitas maksimal sebanyak 20 elemen. Untuk melengkapi fungsionalitasnya, tersedia pula fitur balikStack yang bertugas memutar balik urutan data di dalam tumpukan, di mana seluruh hasil pemrosesan akhirnya ditampilkan secara sistematis melalui prosedur printInfo.
+Program ini merupakan model Stack yang komprehensif karena tidak hanya menjalankan fungsi standar LIFO (Last In First Out), tetapi juga mengintegrasikan fungsi filtering untuk hanya menerima input bertipe numerik, fungsi sorting otomatis melalui penggunaan tumpukan sementara (temporary stack), dan fungsi reversal fisik menggunakan algoritma two-pointer swapping. Dengan kapasitas statis sebesar 20 elemen, kode ini sangat efektif untuk mendemonstrasikan bagaimana data dapat dimanipulasi di dalam memori array tanpa kehilangan integritas struktur tumpukannya.
 
 
 ## Referensi
-[1] Stack in C++ STL. https://www.geeksforgeeks.org/cpp/stack-in-cpp-stl/
-[2] stack::push() and stack::pop() in C++ STL. https://www.geeksforgeeks.org/cpp/stack-push-and-pop-in-c-stl/
+[1] GeeksforGeeks - Stack Data Structure: https://www.geeksforgeeks.org/stack-data-structure/
+
+[2]Sorting a Stack using a Temporary Stack: https://www.geeksforgeeks.org/sort-a-stack-using-a-temporary-stack/
