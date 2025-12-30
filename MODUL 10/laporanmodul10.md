@@ -619,6 +619,7 @@ int main()
 ```
 ### Output soal 3:
 ![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/f40650fc41b6fd33580d772c060b7c2cb8a2b8cf/MODUL%2010/foto%20hasil/Screenshot%202025-12-30%20094310.png)
+
 Kode program ini merupakan implementasi struktur data Binary Search Tree (BST) yang berfungsi untuk mengelola informasi secara hierarkis dan teratur. Alur kerjanya dimulai dengan fungsi alokasi yang memesan ruang memori untuk setiap simpul baru, yang kemudian diposisikan oleh fungsi insertNode ke cabang kiri jika nilainya lebih kecil atau ke cabang kanan jika lebih besar dari induknya. Selain itu, program dilengkapi dengan fungsi findNode yang melakukan pencarian data secara efisien dengan cara menelusuri jalur yang sesuai berdasarkan perbandingan nilai.
 Untuk menampilkan isi pohon, program menyediakan tiga metode penelusuran yaitu In-Order untuk mendapatkan urutan angka yang terurut dari terkecil ke terbesar, Pre-Order untuk melihat urutan dari akar ke cabang, dan Post-Order untuk melihat urutan dari cabang terdalam menuju akar. Seluruh logika ini diuji dalam bagian main dengan memasukkan serangkaian angka acak, yang membuktikan bahwa sistem mampu mengorganisir data yang berantakan menjadi struktur yang rapi dan mudah dicari.
 
